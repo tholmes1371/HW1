@@ -1,0 +1,186 @@
+SELECT CustomerState, COUNT(*) AS NumberOfCustomers
+FROM Customer_T
+GROUP BY CustomerState
+HAVING COUNT(*)>1
+ORDER BY NumberOfCustomers desc;
+
+-- Sub Query
+-- Find the products (ProductID, ProductDescription, ProductFinish) whose price is higher than the average price of products in the database
+
+SELECT ProdcutID, ProductDescription, ProductFinish
+FROM Product_T
+WHERE ProductStandardPrice > (SELECT AVG(ProductStandarPrice) FROM Prodcut_T);
+
+SELECT StudentID
+FROM Student_T
+WHERE Age >= (SELECT MIN(Age) FROM Student_T) + 1;
+
+SELECT StudentID
+FROM Student_T
+WHERE GPA > (SELECT AVG(GPA) FROM Student_T) * 1.5;
+
+-- find the number of students from each department that has more than 10 people who have GPA 50% higher than the average GPA. 
+SELECT Dept, COUNT(*)
+FROM Student_T
+WHERE GPA > (SELECT AVG(GPA) FROM Student_T) * 1.5
+GROUP BY Dept;
+HAVING COUNT(*)>10
+
+--Advanced SQL Lecture 3.21.16:
+
+--Find the products whose price is higher than the average price of the products in the database:
+SELECT ProductID, ProductDescription, ProductFinish
+FROM Product_T
+WHERE Price > (SELECT AVG(Price) FROM Product_t);
+
+--We can use values in the common fields (or fields with common domains) to query multiple tables at the same time
+--Cartesian Join of two tables is a (resulting) table which has every row of the first table combined with every row of the second table
+--will simply match every row from table_a to table_b - this result is usually not helpful. 
+SELECT *
+FROM Customer_T, Order_T
+
+--equi-join
+SELECT Customer_T.Customerid, Order_T.Customerid, OrderID, CustomerName, CustomerState
+FRom Customer_T, Order_t
+WHERE Customer_T.Customerid = Order_t.Customerid
+ORDER BY OrderID;
+
+--count number of orders in each state
+SELECT Count(*) AS TotalOrder, CustomerState
+FROM Customer_T, Order_T
+WHERE Customer_T.Customerid = Order_t.Customerid
+GROUP BY CustomerState
+
+--alternatives to equi-join.
+SELECT Customer_T.CustomerID, CustomerName, OrderDate
+FROM Customer_T INNER JOIN Order_T
+ON Customer_T.CustomerID = Order_T.CustomerID;
+
+--inner join
+SELECT CustomerID, CustomerName, OrderDate
+FROM Customer_T INNER JOIN Order_T
+USING (CustomerID);
+
+--natural join
+SELECT CustomerID, CustomerName, OrderDate
+FROM Customer_T NATURAL JOIN Order_T;
+
+--join based on more than one column, for when a composite primary key is used
+SELECT Name
+FROM Employee, ProjAssignment
+WHERE EmpState = EmpSt AND EmplDLNum = EmpDL AND PID = 1;
+
+--List the states of Twitter users whos tweets contain the word "Iowa"
+--Find the number of tweets that contain the word "Hawkeyes" from each state
+SELECT StateName
+FROM USER_T, TWEET_T
+WHERE USER_T.UserID = Tweet.userID and LOWER(tweetcontent) LIKE '%iowa%';
+
+--every column you have in select MUST appear also in GROUP BY
+SELECT COUNT(*), StateName
+FROM USER_T, TWEET_T
+WHERE USER_T.UserID = Tweet.userID and LOWER(tweetcontent) LIKE '%hawkeyes%'
+GROUP BY StateName
+
+--Recusive Relationships
+--FK within the same table
+--In order to query based on a recursive/unary relationship on a table we need to join the table with itself. This is called a self-join
+--In order to join a table to itself you will need to give a table two different aliases.
+SELECT E.EmployeeID, E.EmployeeName, E.EmployeeSupervisor AS SupervisorID, S.EmployeeNAme AS SupervisorName
+FROM Employee_T E, Employee_T S
+WHERE E.EmployeeSupervisor = S.EmployeeID;
+
+--Subqueries
+--Find names of students who take courses in the Pappajohn building without using JOIN
+
+
+--Find the names of all customers who have not placed an order
+SELECT CustomerName
+FROM Customer_T
+WHERE CustomerID NOT IN (SELECT CustomerID FROM Order_T);
+
+SELECT CustomerName, Address
+FROM Customer_T LEFT OUTER JOIN Order_T
+ON Customer_T.CustomerID = Order_T.CustomerID
+WHERE OrderID = 1008;
+
+
+SELECT CustomerName, Address
+FROM Customer_T
+WHERE CID IN
+ (SELECT CID FROM Order_T WHERE OrderID = 1008);
+ 
+SELECT TweetUser
+FROM TableTweet O, TableTweet R
+WHERE O.TweetID = R.RTID
+	AND O.TweetUser - 1002
+	
+--Provide the user ID and city of each user whos state and age are the same as those of user 1001
+SELECT USERID, City
+FROM TW_USER
+Where STATE = 
+	(SELECT StateName
+	 FROM TW_USER
+	 WHERE userID = 1001)
+AND age = 
+    (SELECT age
+	 FROM TW_USER
+	 WHERE UserID = 1001)
+AND userID != 1001;
+
+--OR you can use "multicolum comparison"
+SELECT userID, City
+FROM TU_USER
+WHERE (StateName, Age) = 
+	(SELECT StateName, Age
+	 FROM TW_USER
+	 WHERE userID=1001)
+AND userID != 1001;	 
+
+--Provide the ID, State abd age of each user whos age is more than the minimum age in her/his own state
+
+SELECT ID, StateName, Age
+FROM TW_USER
+WHERE (StateName, Age) NOT IN
+	(SELECT StateName, Min(AGE)
+	FROM TW_USER
+	GROUP BY StateName);
+	
+--How much does the price of each product differs from the average price?
+SELECT ProductStandarPrice - AvgPrice
+FROM Product_T, (SELECT avg(Price) AS AvgPrice FROM Product_T);
+
+SELECT userID as "Iphone fans outside of IA"
+FROM TW_USER
+WHERE statename!='IA'
+INTERSECT
+SELECT tweetuser
+FROM TW_TWEET
+WHERE lower(TweetContent) LIKE '%iphone%';
+
+
+SELECT userID as "User with no tweet"
+FROM TW_USER
+MINUS
+SELECT tweetuser
+FROM TW_TWEET;
+
+SELECT UAge
+FROM User_T
+
+--Find the age of those who follow both 1001 and 1002 (using set operators)
+SELECT AGE
+FROM USER_T
+WHERE UID IN
+	((SELECT FID
+	FROM Follow_t
+	WHERE UID = 1001)
+	INTERSECT
+	(SELECT FID
+	FROM Follow_t
+	WHERE UID = 1002));
+
+	
+
+
+	 
