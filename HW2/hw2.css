@@ -26,7 +26,7 @@ h2{
 
 
 .image{
-	background: black url(https://lh3.googleusercontent.com/WMbP085Y_mWz_mcZBZNiXrrJ9w0ga6QLsILfAU7gjka7TyKfkqJ8Kzc75F1SslRu2E8HB70toZugmMzqmGtIp6WddB-F1PNuyyD6DkdhuNTBcB-7wyOh2RAGkXxJAxe4vMcG__7-lbTDuOYL_n6zPh1VM59w0jMu4xiP6lG1rsNbKU-mw1v1sQiVObJrzN_jbzB9NmR5tu7BdS9LldFUgjAbU9S9y01KWoF9K0czqCjXPeN0r03vjRml0ve2t5L13bs8RwXPbkxcY_XUe6Gfrslezxl1qJfCoinve-7_c_pJdK_DrJOQpEGMg11OofZXz-FNMFwsAujEHx7g45cR4TlYGFDya-N-QOhPLacOSZGcfhtkCLaXvzk-J-3IpkU0m2n9JqBdLxnuP-1pTuwuvNjwq7O5KrYNv79i2R1OgCZXyHW8RpumlQcvN-M0XpxJmphhMRmBikOuvHOUkGokT-6n-pXBVgWlQlP-TdC7rBTHX_k9IXtMg0o12Cgag_VOqLSg1tOZaF0KJ4mmELwT9wcFLQEuBTem9GWaaN2FkrqE9RUK1ocOqaX67xHZbkIxdSWcPCINzXmp3SQl-8km639tYytsaySaCdxT_uTxtkdiBG1-cw=w964-h402-no);
+	background: url("./Clouds.JPG");
 	background-size: cover;
 	background-position: center;
 	
@@ -135,17 +135,7 @@ li a:hover{
 #piclist li{
 	float: left;
 }
-/*#piclist li a{
-	border: solid 3px black;
-	background: #CACFD2;
-	text-align: center;
-	width: 450px;
-	padding: 10px;
-	margin-top: 10px;
-	margin-right:10px;
-	margin-left: 10px;
-	margin-bottom: 20px;
-}*/
+
 ul#resume{
 	background-color: #D7DBDD;
 	margin: auto;
