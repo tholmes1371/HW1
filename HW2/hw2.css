@@ -154,7 +154,10 @@ ul#resume{
 }
 
 #resume li{
-	float: left;
+	font-family: "Arial", Helvetica, sans-serif;
+	font-size: 13pt;
+	font-weight: normal;
+	list-style-type: normal;
 }
 	
 
