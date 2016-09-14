@@ -210,3 +210,15 @@ h7{
 	text-align: right;
 	background-color: #D7DBDD;
 }
+HR{
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+.rotate90{
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	transform: rotate(270deg);
+	width: 450px;
+}
