@@ -8,6 +8,7 @@ p{
 	font-family: "Arial", Helvetica, sans-serif;
 	text-indent: 50px;
 	text-align: justify;
+	margin-top:0px;
 	/*margin-left: 150px;
 	margin-right: 150px;*/
 }
@@ -19,6 +20,7 @@ h1{
 h2{
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	text-align: center;
+	margin-bottom: 0px;
 	
 }
 
@@ -77,20 +79,23 @@ li a:hover{
 	color: red;
 }
 
-.backbox{
+#backbox{
 	background-color: #D7DBDD;
-	margin-left: 100px;
-	margin-right: 100px;
-	padding-bottom: 5px;
-	padding-top: 5px;
+	margin: auto;
+	width: 90%;
+	text-align: left;
+	border: 0px;
 	padding-left: 10px;
 	padding-right: 10px;
 }
-.headerback{
+#headerback{
 	background-color: #CACFD2;
-	margin-left:100px;
-	margin-right:100px;
+	margin: auto;
+	border: 0px;
+	width: 90%;
 	padding-bottom: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 .banner{
 	background-color: black;
@@ -141,3 +146,64 @@ li a:hover{
 	margin-left: 10px;
 	margin-bottom: 20px;
 }*/
+ul#resume{
+	background-color: #D7DBDD;
+	margin: auto;
+	overflow: hidden;
+	width: 90%;
+}
+
+#resume li{
+	float: left;
+}
+	
+
+h4{
+	font-family: "Arial", Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 13pt;
+	padding: 2px;
+	margin:0px;
+	border:0px;
+}
+h5{
+	font-family: "Arial", Helvetica, sans-serif;
+	font-size: 13pt;
+	font-weight: normal;
+	padding: 2px;
+	margin:0px;
+	border:0px;
+}
+h6{
+	font-family: "Arial", Helvetica, sans-serif;
+	font-size: 13pt;
+	font-weight: normal;	
+	padding: 2px;
+	margin:0px;
+	border:0px;
+}
+h7{
+	font-family: "Arial", Helvetica, sans-serif;
+	font-size: 13pt;
+	font-weight: bold;	
+	padding: 0px;
+	margin:0px;
+	border:0px;
+}
+	
+.resume{
+	margin-left:100px;
+	margin-right:100px;
+}
+#resleft{
+	width: 50%;
+	float: left;
+	background-color: #D7DBDD;
+}
+
+#resright{
+	width: 50%;
+	float: left;
+	text-align: right;
+	background-color: #D7DBDD;
+}
