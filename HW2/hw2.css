@@ -187,10 +187,10 @@ ul#resume{
 hr{
 	margin-top: 0px;
 	margin-bottom: 5px;
-	width="100%";
+	width:"100%";
 	border-style: solid;
 	border-width: 1px;
-	color="black";
+	color:"black";
 }
 .rotate90{
 	-webkit-transform: rotate(270deg);
