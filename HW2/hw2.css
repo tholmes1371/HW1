@@ -88,8 +88,8 @@ ul#navbar{
 	text-decoration: none;
 }
 
-li a:hover{
-	color: red;
+#navbar li a:hover{
+	color: slateblue;
 }
 
 #backbox{
