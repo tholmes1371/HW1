@@ -1,6 +1,7 @@
 body{
 	background-color:#E5E7E9;
 }
+
 p{
 	font-size: 15pt;
 	font-family: "Arial", Helvetica, sans-serif;
@@ -10,23 +11,24 @@ p{
 	/*margin-left: 150px;
 	margin-right: 150px;*/
 }
+
 h1{
 	font-family: "Arial", Helvetica, sans-serif;
 	margin-left: 100px;
 	margin-right: 100px;
 }
+
 h2{
 	font-family: "Arial", Helvetica, sans-serif;
 	text-align: center;
 	margin-bottom: 0px;
-	
 }
+
 #wrap{
 	background-color:#E5E7E9;
 	margin: 0 auto;
 	width: 95%
 }
-
 
 .image{
 	background: url("./Clouds.JPG");
@@ -38,7 +40,6 @@ h2{
 h3{
 	position: absolute;
 	top: 300px;
-	
 }
 
 h3 span{
@@ -49,6 +50,7 @@ h3 span{
 	background: rgba(0,0,0,0.7);
 	padding: 10px;
 }
+
 h4{
 	font-family: "Arial", Helvetica, sans-serif;
 	font-weight: bold;
@@ -57,6 +59,7 @@ h4{
 	margin:0px;
 	border:0px;
 }
+
 h5{
 	font-family: "Arial", Helvetica, sans-serif;
 	font-size: 13pt;
@@ -65,6 +68,7 @@ h5{
 	margin:0px;
 	border:0px;
 }
+
 .box1{
 	border: 1px solid blue;
 }
@@ -76,6 +80,7 @@ ul#navbar{
 	overflow: hidden;
 	background-color:#333;
 }
+
 #navbar li{
 	float: left;
 }
@@ -101,6 +106,7 @@ ul#navbar{
 	padding-left: 10px;
 	padding-right: 10px;
 }
+
 #headerback{
 	background-color: #CACFD2;
 	margin: auto;
@@ -110,6 +116,7 @@ ul#navbar{
 	padding-left: 10px;
 	padding-right: 10px;
 }
+
 .banner{
 	background-color: black;
 	width: 100%;
@@ -120,6 +127,7 @@ ul#navbar{
 	padding-top: 50px;
 	padding-bottom: 50px;
 }
+
 .pictures{
 	border: solid 3px black;
 	background: #CACFD2;
@@ -131,12 +139,12 @@ ul#navbar{
 	padding-right:10px;
 	padding-left: 10px;
 	margin: 10px;
-	
-	
 }
+
 .scale{
 	width: 450px;
 }
+
 #piclist{
 	list-style-type: none;
 	padding: 0px;
@@ -145,14 +153,17 @@ ul#navbar{
 	margin-right: 10px;
 	margin-bottom: 20;
 }
+
 #piclist li{
 	float: left;
 	overflow: hidden;
 }
+
 #pickbox{
 	width: 100%;
 	margin: auto;
 }
+
 ul#resume{
 	background-color: #D7DBDD;
 	margin: auto;
@@ -166,12 +177,12 @@ ul#resume{
 	font-weight: normal;
 	list-style-type: normal;
 }
-	
 
 .resume{
 	margin-left:100px;
 	margin-right:100px;
 }
+
 #resleft{
 	width: 50%;
 	float: left;
@@ -184,6 +195,7 @@ ul#resume{
 	text-align: right;
 	background-color: #D7DBDD;
 }
+
 hr{
 	margin-top: 0px;
 	margin-bottom: 5px;
@@ -192,6 +204,7 @@ hr{
 	border-width: 1px;
 	color:"black";
 }
+
 .rotate90{
 	-webkit-transform: rotate(270deg);
 	-moz-transform: rotate(270deg);
@@ -200,6 +213,7 @@ hr{
 	transform: rotate(270deg);
 	width: 450px;
 }
+
 footer{
 	background-color: #CACFD2;
 	text-align: center;
@@ -210,4 +224,3 @@ footer{
 	font-size: 13pt;
 	font-family: "Arial", Helvetica, sans-serif;
 }
-
